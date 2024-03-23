@@ -1,0 +1,16 @@
+.sidebar-container {
+  min-width: 5%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: black;
+  justify-content: space-between;
+}
+
+.profile-tag {
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  margin-top: 20px;
+}

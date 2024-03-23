@@ -1,0 +1,29 @@
+.login-page {
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.logo {
+  width: 250px;
+  height: 250px;
+  border-radius: 225px;
+}
+
+.btn-class {
+  background-color: white;
+  color: black;
+  border-radius: 20px;
+  padding: 4px 10px;
+  margin: 30px 0px 0px 0px;
+  font-weight: 500;
+}
+.name {
+  color: white;
+  margin-bottom: 0px;
+}

@@ -1,0 +1,10 @@
+.screen-container {
+  width: 95%;
+  height: 100%;
+  border-radius: 0px;
+  opacity: 1;
+  background-color: #ffffff;
+}
+.flex {
+  display: flex;
+}
