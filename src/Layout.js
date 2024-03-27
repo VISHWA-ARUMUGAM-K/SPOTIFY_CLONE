@@ -7,8 +7,6 @@ import "./App.css";
 import DataContext, { DataProvider } from "./Context/DataContext";
 
 const Layout = () => {
-  // const { token } = useContext(DataContext);
-  // console.log(token);
   const [token, setToken] = useState("");
 
   useEffect(() => {
@@ -28,18 +26,17 @@ const Layout = () => {
   }, []);
 
   return (
-    //classname mainbody
     <div className="App">
-      <DataProvider>
-        {token ? (
-          <div className="main-container" style={{ display: "flex" }}>
+      {token ? (
+        <div className="main-container" style={{ display: "flex" }}>
+          <DataProvider>
             <Sidebar></Sidebar>
             <Outlet></Outlet>
-          </div>
-        ) : (
-          <Login></Login>
-        )}
-      </DataProvider>
+          </DataProvider>
+        </div>
+      ) : (
+        <Login></Login>
+      )}
     </div>
   );
 };

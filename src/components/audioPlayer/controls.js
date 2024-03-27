@@ -9,7 +9,7 @@ export default function Controls({
   handleNext,
   handlePrev,
 }) {
-  console.log(isPlaying);
+  // console.log(isPlaying);
   return (
     <IconContext.Provider value={{ size: "35px", color: "#C4D0E3" }}>
       <div className="controls-wrapper flex">

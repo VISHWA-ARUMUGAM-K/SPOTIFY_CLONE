@@ -7,7 +7,6 @@ import WaveAnimation from "./waveAnimation";
 // import { clear } from "@testing-library/user-event/dist/clear";
 
 function Audioplayer({ currenttrack, currentIndex, setCurrentIndex, total }) {
-  console.log(total);
   const [isPlaying, setIsPlaying] = useState(false);
   const [trackProgress, setTrackProgess] = useState(0);
   var audioSrc = total[currentIndex]?.track.preview_url;
@@ -16,8 +15,6 @@ function Audioplayer({ currenttrack, currentIndex, setCurrentIndex, total }) {
 
   const audioRef = useRef(new Audio(total[0]?.track.preview_url));
   // const audioRef = useRef(new Audio(audioSrc));
-
-  console.log(audioRef);
 
   const intervalRef = useRef();
   const isReady = useRef(false);
