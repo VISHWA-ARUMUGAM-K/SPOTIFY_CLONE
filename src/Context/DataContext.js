@@ -11,6 +11,14 @@ export const DataProvider = ({ children }) => {
   const [currenttrack, setCurrentTrack] = useState({});
   const [currentIndex, setCurrentIndex] = useState(0);
 
+  console.log(currentIndex);
+
+  useEffect(() => {
+    try {
+      setCurrentTrack(tracks[currentIndex].track);
+    } catch (e) {}
+  }, [currentIndex, tracks]);
+
   useEffect(() => {
     const fetchFullPlaylist = async () => {
       setIsLoading(true);

@@ -4,8 +4,7 @@ function Queue({ tracks, setCurrentIndex, HandleCurrentTrack }) {
   // console.log(tracks, setCurrentIndex);
 
   const queueList = tracks?.map((track, index) => (
-    // <div className="queue-item flex" onClick={() => setCurrentIndex(index)}>
-    <div className="queue-item flex" onClick={() => HandleCurrentTrack(index)}>
+    <div className="queue-item flex" onClick={() => setCurrentIndex(index)}>
       <p className="track-name">{track?.track?.name}</p>
       <p className="track-duration">{track?.track?.duration_ms}</p>
     </div>

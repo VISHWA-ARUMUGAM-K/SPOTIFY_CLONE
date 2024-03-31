@@ -14,14 +14,7 @@ export default function Player() {
   // const [currentIndex, setCurrentIndex] = useState(0);
   //need to use context api to display the tracks at same time
   // const { isLoading } = useContext(DataContext);
-  const {
-    tracks,
-    currenttrack,
-    isLoading,
-    currentIndex,
-    setCurrentIndex,
-    HandleCurrentTrack,
-  } = useContext(DataContext);
+  const { tracks, currenttrack, isLoading, currentIndex, setCurrentIndex, HandleCurrentTrack } = useContext(DataContext);
 
   // useEffect(() => {
   //   if (location.state) {
@@ -43,28 +36,17 @@ export default function Player() {
 
   return (
     <div className="screen-container flex">
-      {!tracks.length > 0 && (
-        <h1>No playlist selected.Select a playlist to get started</h1>
-      )}
+      {!tracks.length > 0 && <h1 style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>No playlist selected.Select a playlist to get started</h1>}
       {tracks.length > 0 && !isLoading && (
         <div className="left-player-body">
-          <AudioPlayer
-            currenttrack={currenttrack}
-            total={tracks}
-            currentIndex={currentIndex}
-            setCurrentIndex={setCurrentIndex}
-          ></AudioPlayer>
+          <AudioPlayer currenttrack={currenttrack} total={tracks} currentIndex={currentIndex} setCurrentIndex={setCurrentIndex}></AudioPlayer>
           <Widgets artistID={currenttrack?.album?.artists[0]?.id}></Widgets>
         </div>
       )}
       {tracks.length > 0 && !isLoading && (
         <div className="right-player-body">
           <SongCard album={currenttrack?.album}></SongCard>
-          <Queue
-            tracks={tracks}
-            setCurrentIndex={setCurrentIndex}
-            HandleCurrentTrack={HandleCurrentTrack}
-          ></Queue>
+          <Queue tracks={tracks} setCurrentIndex={setCurrentIndex} HandleCurrentTrack={HandleCurrentTrack}></Queue>
         </div>
       )}
     </div>
